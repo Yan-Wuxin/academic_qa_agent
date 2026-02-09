@@ -1,0 +1,18 @@
+# 核心框架：只指定langchain主版本，pip自动匹配兼容的子模块
+langchain==1.2.9
+# 阿里云千问API（固定版本，无冲突）
+dashscope==1.14.0
+# 向量库（固定版本，无冲突）
+chromadb==0.4.24
+# 文档处理
+pypdf==4.1.0
+python-dotenv==1.0.1
+# 向量化模型
+sentence-transformers==2.7.0
+# 前端
+streamlit==1.32.2
+# 工具调用
+duckduckgo-search==5.3.0
+# 兼容依赖（避免额外报错）
+typing-extensions>=4.9.0
+pydantic>=2.0.0
