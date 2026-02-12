@@ -3,6 +3,7 @@ from langchain_core.runnables.history import RunnableWithMessageHistory
 
 chat_histories = {}
 
+# llm memory
 def get_session_history(session_id: str) -> InMemoryChatMessageHistory:
     if session_id not in chat_histories:
         chat_histories[session_id] = InMemoryChatMessageHistory()

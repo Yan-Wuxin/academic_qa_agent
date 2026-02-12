@@ -5,17 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8148f268-5784-4e87-95fa-7a8095e46e8b" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/core/rag_tool.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/academic_qa_agent.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/academic_qa_agent.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/数字信号处理复习提纲.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chroma.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chroma_db/817648d9-9651-4a23-87c0-724693d419c2/data_level0.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chroma_db/817648d9-9651-4a23-87c0-724693d419c2/header.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chroma_db/817648d9-9651-4a23-87c0-724693d419c2/index_metadata.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chroma_db/817648d9-9651-4a23-87c0-724693d419c2/length.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chroma_db/817648d9-9651-4a23-87c0-724693d419c2/link_lists.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chroma_db/chroma.sqlite3" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/core/agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/agent.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/memory.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/memory.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/rag.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/rag.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/rag_tool.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/core/tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/tool.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,18 +52,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.test.executor": "Run",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/academic_qa_agent/data&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings module-name="academic_qa_agent" is-module-sdk="true">
@@ -68,6 +75,9 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\academic_qa_agent\data" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\academic_qa_agent" />
     </key>
@@ -88,5 +98,16 @@
       <updated>1770617947449</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

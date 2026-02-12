@@ -23,7 +23,10 @@ llm = ChatTongyi(
     model_name='qwen-turbo',
     # temperature=
 )
-embeddings = DashScopeEmbeddings()
+embeddings = DashScopeEmbeddings(
+    dashscope_api_key=api_key,
+    model="text-embedding-v3",
+)
 
 def load_and_split_document(file_path):
     loader = PyPDFLoader(file_path=file_path)
@@ -68,13 +71,14 @@ def build_rag_chain(retriever):
         """
     )
     rag_chain = {"input": RunnableLambda(itemgetter("input")),
-                 "context": RunnableLambda(itemgetter("input")) | retriever | format_func} \
+                 "context": RunnableLambda(itemgetter("input"))
+                            | retriever | format_func} \
             | prompt \
             | llm \
             | StrOutputParser()
     return rag_chain
 
-def rag_qa(file_path, input, session_id="default_session"):
+def rag_qa(file_path, input, session_id):
     docs = load_and_split_document(file_path)
     retriever = build_vector_db(docs)
     chain = build_rag_chain(retriever)

@@ -1,8 +1,6 @@
-from core.rag import rag_qa
-from core.memory import get_session_history
 from core.agent import agent_qa
 
-input="文章作者分别有谁？"
-file_path = "./data/2210.03629v3.pdf"
+input="该提纲中要求掌握关于Z变换的哪些知识点？"
+file_path = "./data/数字信号处理复习提纲.pdf"
 response = agent_qa(file_path, input)
 print(response)

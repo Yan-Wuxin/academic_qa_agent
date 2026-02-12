@@ -25,6 +25,7 @@ with st.sidebar: # 侧边栏，上传pdf文件
         file_path = os.path.join("data", uploaded_file.name)
         with open(file_path, "wb") as f:
             f.write(uploaded_file.getbuffer())
+        st.session_state.file_path = file_path # 防止页面刷新丢失
         st.success(f"文件上传成功：{uploaded_file.name}")
 
     if st.button("清空对话记录", type="secondary"):
@@ -41,34 +42,22 @@ for msg in st.session_state.chat_history:
         st.chat_message("assistant").write(msg["content"])
 
 st.subheader("问答区")
-input = st.text_input("请输入您关于这篇论文的问题")
+input = st.text_input("请输入您关于这篇文章的问题")
 
 # 纯RAG回答 + agent使用工具回答
-col1, col2 = st.columns(2)
-with col1:
-    rag_btn = st.button("纯文献回答（RAG）", type="primary")
-with col2:
-    agent_btn = st.button("智能回答（agent + 工具）")
+col, = st.columns(1) # 返回数组
+with col:
+    agent_btn = st.button("发送", type="primary")
 
-if rag_btn and uploaded_file and input:
+if agent_btn and uploaded_file and input:
     st.session_state.chat_history.append({"role": "user", "content": input})
-    with st.spinner("正在检索文献并组织答案..."):
+    with st.spinner("正在思考并组织答案..."):
         try:
-            response = rag_qa(
-                file_path,
-                input,
-                st.session_state.session_id
+            response = agent_qa(
+                file_path=st.session_state.file_path,
+                input=input,
+                session_id=st.session_state.session_id,
             )
-            st.session_state.chat_history.append({"role": "assistant", "content": response})
-            st.rerun() # 刷新页面展示最新对话
-        except Exception as e:
-            st.error(f"出错了：{str(e)}")
-
-if agent_btn and input:
-    st.session_state.chat_history.append({"role": "user", "content": input})
-    with st.spinner("正在思考（或调用工具）并组织答案..."):
-        try:
-            response = agent_qa(input)
             st.session_state.chat_history.append({"role": "assistant", "content": response})
             st.rerun()
         except Exception as e:
