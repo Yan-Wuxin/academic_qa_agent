@@ -1,0 +1,5 @@
+2026-02-12 15:02:28,526 - agent - INFO - logger_handler.py:45 - 信息日志
+2026-02-12 15:02:28,527 - agent - INFO - logger_handler.py:46 - 错误日志
+2026-02-12 15:02:28,527 - agent - WARNING - logger_handler.py:47 - 警告日志
+2026-02-12 15:02:28,527 - agent - DEBUG - logger_handler.py:48 - 调试日志
+2026-02-12 15:05:17,384 - agent - ERROR - prompt_loader.py:15 - [load_system_prompts]解析系统提示词出错, [Errno 2] No such file or directory: 'D:\\academic_qa_agent\\prompts/main_prompt.txt'

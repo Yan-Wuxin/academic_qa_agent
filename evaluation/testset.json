@@ -1,0 +1,54 @@
+[
+  {
+    "query": "ReAct方法提出的主要研究目标是什么？",
+    "gold_chunk": [
+      "react_paper_102",
+      "react_paper_69",
+      "paper_36"
+    ],
+    "gold_texts": [
+      "ﬂexible thought space supports, for better task solving. We believe this is an exciting direction for\nhuman alignment and leave more systematic study as future work.\nB E XPERIMENT DETAILS\nB.1 H OTPOT QA F INETUNING DETAILS\nFor all ﬁnetuning we use a batch size of 64. On PaLM-8B, we ﬁnetune ReAct andAct methods\nfor4,000steps and Standard andCoT methods for 2,000steps. On PaLM-62B, we ﬁnetune\nReAct andAct methods for 4,000steps and Standard andCoT methods for 1,000steps. We\nﬁndReAct andAct methods generally beneﬁt from more training steps (and more training data),\nwhile Standard andCoT methods degrade soon after ﬁnetuning.\nB.2 A LFWORLD IM-S TYLE DETAILS\nFor the IM-style ablation, the same expert trajectories used in ReAct are reannotated with dense",
+      "Published as a conference paper at ICLR 2023\nwith initial promising results, but learning from more high-quality human annotations will be the\ndesiderata to further improve the performance. Scaling up ReAct with multi-task training and\ncombining it with complementary paradigms like reinforcement learning could result in stronger\nagents that further unlock the potential of LLMs for more applications.\nACKNOWLEDGMENTS\nWe thank the support and feedback of many people from Google Brain team and Princeton NLP\nGroup. This work was supported in part by the National Science Foundation under Grant No.\n2107048. Any opinions, ﬁndings, and conclusions or recommendations expressed in this material are\nthose of the author(s) and do not necessarily reﬂect the views of the National Science Foundation.",
+      "Published as a conference paper at ICLR 2023\n8b 62b 540b\nsize051015202530HotpotQA EMlearning = prompt\n8b 62b 540b\nsizelearning = finetune\nMethod\nStandard\nCoT\nAct\nReAct\nFigure 3: Scaling results for prompting and ﬁnetuning on HotPotQA with ReAct (ours) and baselines.\n4 D ECISION MAKING TASKS\nWe also test ReAct on two language-based interactive decision-making tasks, ALFWorld and\nWebShop, both of which feature complex environments that require agents to act over long horizons\nwith sparse rewards, warranting the need for reasoning to act and explore effectively.\nALFWorld ALFWorld (Shridhar et al., 2020b) (Figure 1(2)) is a synthetic text-based game designed\nto align with the embodied ALFRED benchmark (Shridhar et al., 2020a). It includes 6 types of\ntasks in which an agent needs to achieve a high-level goal (e.g. examine paper under desklamp) by\nnavigating and interacting with a simulated household via text actions (e.g. go to coffeetable 1, take"
+    ]
+  },
+  {
+    "query": "ReAct框架是如何将推理与行动结合的？",
+    "gold_chunk": [
+      "react_paper_22",
+      "paper_22"
+    ],
+    "gold_texts": [
+      "setup for both tasks, where models only receive the question/claim as input without access to support\nparagraphs, and have to rely on their internal knowledge or retrieve knowledge via interacting with\nan external environment to support reasoning.\nAction Space We design a simple Wikipedia web API with three types of actions to support\ninteractive information retrieval: (1) search [entity ], which returns the ﬁrst 5 sentences from\nthe corresponding entity wiki page if it exists, or else suggests top-5 similar entities from the\nWikipedia search engine, (2) lookup [string ], which would return the next sentence in the page\ncontaining string , simulating Ctrl+F functionality on the browser. (3) finish [answer ], which\nwould ﬁnish the current task with answer . We note that this action space mostly can only retrieve a\nsmall part of a passage based on exact passage name, which is signiﬁcantly weaker than state-of-the-",
+      "setup for both tasks, where models only receive the question/claim as input without access to support\nparagraphs, and have to rely on their internal knowledge or retrieve knowledge via interacting with\nan external environment to support reasoning.\nAction Space We design a simple Wikipedia web API with three types of actions to support\ninteractive information retrieval: (1) search [entity ], which returns the ﬁrst 5 sentences from\nthe corresponding entity wiki page if it exists, or else suggests top-5 similar entities from the\nWikipedia search engine, (2) lookup [string ], which would return the next sentence in the page\ncontaining string , simulating Ctrl+F functionality on the browser. (3) finish [answer ], which\nwould ﬁnish the current task with answer . We note that this action space mostly can only retrieve a\nsmall part of a passage based on exact passage name, which is signiﬁcantly weaker than state-of-the-"
+    ]
+  },
+  {
+    "query": "ReAct方法相比传统Chain-of-Thought推理方法有哪些优势？",
+    "gold_chunk": [
+      "react_paper_80",
+      "paper_16",
+      "paper_59"
+    ],
+    "gold_texts": [
+      "ReAct-IM lacks thoughts that (1) determine when a subgoal is completed (2) determine what the\nnext subgoal should be (3) inducing the LLM to refer to its internal pretraining knowledge to identify\nwhere items can be within the environment.\n15",
+      "thought reasoning ( CoT) (Wei et al., 2022). The best approach overall is a combination of ReAct\nandCoT that allows for the use of both internal knowledge and externally obtained information\nduring reasoning. On ALFWorld and WebShop, two or even one-shot ReAct prompting is able\nto outperform imitation or reinforcement learning methods trained with 103∼105task instances,\nwith an absolute improvement of 34% and 10% in success rates respectively. We also demonstrate\nthe importance of sparse, versatile reasoning in decision making by showing consistent advantages\nover controlled baselines with actions only. Besides general applicability and performance boost,\nthe combination of reasoning and acting also contributes to model interpretability, trustworthiness,",
+      "outperforms IM-style prompting ( ReAct-IM ) (71 vs. 53 overall success rate), with consistent\nadvantages on ﬁve out of six tasks. Qualitatively, we observed that ReAct-IM often made mistakes\nin identifying when subgoals were ﬁnished, or what the next subgoal should be, due to a lack of high-\nlevel goal decomposition. Additionally, many ReAct-IM trajectories struggled to determine where\nan item would likely be within the ALFWorld environment, due to a lack of commonsense reasoning.\nBoth shortcomings can be addressed in the ReAct paradigm. More details about ReAct-IM is in\nAppendix B.2. An example prompt for ReAct-IM can be found in Appendix C.4, and an example\ntrajectory in Appendix D.2.3.\n8"
+    ]
+  },
+  {
+    "query": "论文中ReAct在实验中主要在哪些任务或基准上进行了验证？",
+    "gold_chunk": [
+      "paper_102",
+      "react_paper_102",
+      "paper_59",
+      "paper_68"
+    ],
+    "gold_texts": [
+      "ﬂexible thought space supports, for better task solving. We believe this is an exciting direction for\nhuman alignment and leave more systematic study as future work.\nB E XPERIMENT DETAILS\nB.1 H OTPOT QA F INETUNING DETAILS\nFor all ﬁnetuning we use a batch size of 64. On PaLM-8B, we ﬁnetune ReAct andAct methods\nfor4,000steps and Standard andCoT methods for 2,000steps. On PaLM-62B, we ﬁnetune\nReAct andAct methods for 4,000steps and Standard andCoT methods for 1,000steps. We\nﬁndReAct andAct methods generally beneﬁt from more training steps (and more training data),\nwhile Standard andCoT methods degrade soon after ﬁnetuning.\nB.2 A LFWORLD IM-S TYLE DETAILS\nFor the IM-style ablation, the same expert trajectories used in ReAct are reannotated with dense",
+      "ﬂexible thought space supports, for better task solving. We believe this is an exciting direction for\nhuman alignment and leave more systematic study as future work.\nB E XPERIMENT DETAILS\nB.1 H OTPOT QA F INETUNING DETAILS\nFor all ﬁnetuning we use a batch size of 64. On PaLM-8B, we ﬁnetune ReAct andAct methods\nfor4,000steps and Standard andCoT methods for 2,000steps. On PaLM-62B, we ﬁnetune\nReAct andAct methods for 4,000steps and Standard andCoT methods for 1,000steps. We\nﬁndReAct andAct methods generally beneﬁt from more training steps (and more training data),\nwhile Standard andCoT methods degrade soon after ﬁnetuning.\nB.2 A LFWORLD IM-S TYLE DETAILS\nFor the IM-style ablation, the same expert trajectories used in ReAct are reannotated with dense",
+      "outperforms IM-style prompting ( ReAct-IM ) (71 vs. 53 overall success rate), with consistent\nadvantages on ﬁve out of six tasks. Qualitatively, we observed that ReAct-IM often made mistakes\nin identifying when subgoals were ﬁnished, or what the next subgoal should be, due to a lack of high-\nlevel goal decomposition. Additionally, many ReAct-IM trajectories struggled to determine where\nan item would likely be within the ALFWorld environment, due to a lack of commonsense reasoning.\nBoth shortcomings can be addressed in the ReAct paradigm. More details about ReAct-IM is in\nAppendix B.2. An example prompt for ReAct-IM can be found in Appendix C.4, and an example\ntrajectory in Appendix D.2.3.\n8",
+      "with interpretable decision traces. Despite the simplicity of our method, complex tasks with large\naction spaces require more demonstrations to learn well, which unfortunately can easily go beyond\nthe input length limit of in-context learning. We explore the ﬁne-tuning approach on HotpotQA\n6Human feedback can also be incorporated in a complementary manner but we leave it for future work.\n9"
+    ]
+  }
+]

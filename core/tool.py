@@ -1,6 +1,6 @@
 from langchain_community.tools import DuckDuckGoSearchRun
 from langchain.tools import tool
-from .rag import rag_qa
+from rag.rag_service import rag_qa
 
 def build_rag_tool(file_path, session_id):
     def rag_tool_func(input: str): # 内置函数直接传参
