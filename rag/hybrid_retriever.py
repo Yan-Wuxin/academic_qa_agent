@@ -8,7 +8,7 @@ class HybridRetriever(BaseRetriever):
     bm25_retriever: BaseRetriever
     vector_weight: float = 0.7
     bm25_weight: float = 0.3
-    k: int = 5
+    k: int = 10
 
     def _get_relevant_documents(self, query: str) -> list[Document]:
         vector_docs = self.vector_retriever.invoke(query)

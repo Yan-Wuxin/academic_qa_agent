@@ -4,11 +4,11 @@ from rag.hybrid_retriever import HybridRetriever
 
 def build_retriever(splits,
                     embeddings,
-                    k=5,
+                    k=10,
                     persist_directory="./chroma_db",
                     collection_name="test"):
     bm25_retriever = BM25Retriever.from_documents(splits)
-    bm25_retriever.k = 5
+    bm25_retriever.k = 10
 
     vector_db = Chroma(
         collection_name=collection_name,
@@ -22,5 +22,4 @@ def build_retriever(splits,
         vector_retriever=vector_retriever,
         bm25_retriever=bm25_retriever,
     )
-    # return retriever
-    return vector_retriever, bm25_retriever
+    return retriever

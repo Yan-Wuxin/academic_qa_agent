@@ -1,5 +1,6 @@
 import json
 import os
+from rag.reranker import Reranker
 
 TESTSET_PATH = "testset1.json"
 
@@ -13,8 +14,9 @@ def save_testset(testset):
     with open(TESTSET_PATH, "w", encoding="utf-8") as f:
         json.dump(testset, f, ensure_ascii=False, indent=2)
 
-def build_gold_entry(retriver, query, k=10):
+def build_gold_entry(retriver, query, k=5):
     docs = retriver.invoke(query)
+    docs = Reranker().rerank(query, docs)
 
     print("\n==========================")
     print("Query:", query)

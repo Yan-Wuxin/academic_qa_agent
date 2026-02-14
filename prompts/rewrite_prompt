@@ -11,4 +11,4 @@ Rules:
 5. Output ONLY the rewritten query.
 
 User Question:
-{question}
+{query}

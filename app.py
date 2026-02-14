@@ -1,6 +1,6 @@
 import os
 import streamlit as st
-from core.rag import rag_qa
+from rag.rag_service import rag_qa
 from core.memory import get_session_history
 from core.agent import agent_qa
 

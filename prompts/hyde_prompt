@@ -11,4 +11,4 @@ Rules:
 5. Output only the paragraph.
 
 Question:
-{question}
+{query}

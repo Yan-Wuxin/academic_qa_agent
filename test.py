@@ -1,6 +1,6 @@
 from core.agent import agent_qa
 
-input="该提纲中要求掌握关于Z变换的哪些知识点？"
-file_path = "./data/"
+input="论文中提出多头注意力（Multi-Head Attention）的目的是什么？"
+file_path = "./data/1706.03762v7.pdf"
 response = agent_qa(file_path, input)
 print(response)
