@@ -1,0 +1,7 @@
+chat_model:
+  provider: dashscope
+  model_name: qwen-turbo
+
+embedding:
+  provider: local
+  model_name: BAAI/bge-small-zh

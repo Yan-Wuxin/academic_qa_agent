@@ -5,33 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8148f268-5784-4e87-95fa-7a8095e46e8b" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chroma_db/92cedbb7-4da2-4636-bc16-acb2646514f4/data_level0.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chroma_db/92cedbb7-4da2-4636-bc16-acb2646514f4/header.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chroma_db/92cedbb7-4da2-4636-bc16-acb2646514f4/index_metadata.pickle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chroma_db/92cedbb7-4da2-4636-bc16-acb2646514f4/length.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chroma_db/92cedbb7-4da2-4636-bc16-acb2646514f4/link_lists.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chroma_db/chroma.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluation/chroma_db/chroma.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluation/chroma_db/d771df76-225f-4c09-8c79-b9a7909b91ad/data_level0.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluation/chroma_db/d771df76-225f-4c09-8c79-b9a7909b91ad/header.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluation/chroma_db/d771df76-225f-4c09-8c79-b9a7909b91ad/index_metadata.pickle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluation/chroma_db/d771df76-225f-4c09-8c79-b9a7909b91ad/length.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluation/chroma_db/d771df76-225f-4c09-8c79-b9a7909b91ad/link_lists.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluation/gold_builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/gold_builder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prompts/hyde_prompt" beforeDir="false" afterPath="$PROJECT_DIR$/prompts/hyde_prompt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prompts/rewrite_prompt" beforeDir="false" afterPath="$PROJECT_DIR$/prompts/rewrite_prompt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rag/hybrid_retriever.py" beforeDir="false" afterPath="$PROJECT_DIR$/rag/hybrid_retriever.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rag/rag_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/rag/rag_pipeline.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/embedding_service.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/vector_store_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/infra/vector_store_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rag/rag_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/rag/rag_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rag/retriever_builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/rag/retriever_builder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/config_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/config_handler.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="53" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">

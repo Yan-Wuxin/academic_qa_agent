@@ -3,7 +3,7 @@ from langchain.agents import create_agent
 from langchain_core.messages import HumanMessage
 
 from .memory import get_session_history
-from rag.rag_service import llm
+from model.factory import chat_model
 from .tool import build_tools
 from utils.prompt_loader import load_system_prompt
 
@@ -13,7 +13,7 @@ prompt = load_system_prompt()
 def build_agent(file_path, session_id):
     tools = build_tools(file_path, session_id)
     agent = create_agent(
-        model=llm,
+        model=chat_model,
         tools=tools, # 工具描述已自动注入系统prompt
         system_prompt=prompt
     )

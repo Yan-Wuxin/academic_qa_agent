@@ -1,37 +1,21 @@
-import os
-
-from dotenv import load_dotenv
-from langchain_community.chat_models import ChatTongyi
-from langchain_community.embeddings import DashScopeEmbeddings
 from langchain_core.runnables import RunnableLambda
-from langchain_huggingface import HuggingFaceEmbeddings
 
 from rag.reranker import Reranker
 from rag.retriever_builder import build_retriever
-from infra.loader_service import load_and_split_document
+from infra.loader_service import LoaderService
+from infra.splitter_service import SplitterService
 from rag.rag_pipeline import RAGPipeline
 from core.memory import add_memory_to_chain
-
-load_dotenv()
-api_key = os.getenv("DASHSCOPE_API_KEY")
-# initialize the model and embedding
-llm = ChatTongyi(
-    dashscope_api_key=api_key,
-    model_name='qwen-turbo',
-    # temperature=
-)
-embeddings = HuggingFaceEmbeddings(
-    model_name="BAAI/bge-small-zh-v1.5",
-    model_kwargs={"device": "cpu"},
-    encode_kwargs={"normalize_embeddings": True}
-)
+from model.factory import chat_model, embed_model
 
 def rag_qa(file_path, input, session_id):
-    docs = load_and_split_document(file_path)
-    retriever = build_retriever(docs, embeddings)
+    docs = LoaderService().load_file(file_path)
+    splits = SplitterService().split_document(docs)
+
+    retriever = build_retriever(splits)
     pipeline = RAGPipeline(
         retriever=retriever,
-        llm=llm,
+        llm=chat_model,
         reranker=Reranker()
     )
     runnable_pipeline = RunnableLambda(
@@ -46,9 +30,3 @@ def rag_qa(file_path, input, session_id):
         config={"configurable": {"session_id": session_id}},
     )
     return response
-
-if __name__ == "__main__":
-    try:
-        print(embeddings.embed_query("hello"))
-    except Exception as e:
-        print("error:", e)

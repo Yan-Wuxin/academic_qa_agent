@@ -1,22 +1,13 @@
 from langchain_chroma import Chroma
 from langchain_community.retrievers import BM25Retriever
 from rag.hybrid_retriever import HybridRetriever
+from infra.vector_store_service import VectorStoreService
 
-def build_retriever(splits,
-                    embeddings,
-                    k=10,
-                    persist_directory="./chroma_db",
-                    collection_name="test"):
+def build_retriever(splits):
     bm25_retriever = BM25Retriever.from_documents(splits)
     bm25_retriever.k = 10
 
-    vector_db = Chroma(
-        collection_name=collection_name,
-        embedding_function=embeddings,
-        persist_directory=persist_directory,
-    )
-    vector_db.add_documents(splits)
-    vector_retriever = vector_db.as_retriever(search_kwargs={"k":k})
+    vector_retriever = VectorStoreService().get_retriever()
 
     retriever = HybridRetriever(
         vector_retriever=vector_retriever,
