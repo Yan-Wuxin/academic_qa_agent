@@ -12,19 +12,19 @@
 
 相比传统 RAG，本项目实现了完整的高级检索增强流程：
 
-✅ Query Rewrite
+- Query Rewrite
 
-✅ HyDE（Hypothetical Document Embedding，当前已实现，可配置启用）
+- HyDE（Hypothetical Document Embedding，当前已实现，可配置启用）
 
-✅ Hybrid Retrieval（Vector + BM25）
+- Hybrid Retrieval（Vector + BM25）
 
-✅ Cross Encoder Reranker
+- Cross Encoder Reranker
 
-✅ Tool Routing
+- Tool Routing
 
-✅ 多轮对话 Memory
+- 多轮对话 Memory
 
-✅ 本地 Embedding / 本地 Reranker
+- 本地 Embedding / 本地 Reranker
 
 项目整体采用模块化设计，为后续 Agent Workflow 与 LangGraph 编排提供基础。
 
