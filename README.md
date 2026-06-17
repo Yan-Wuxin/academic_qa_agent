@@ -4,13 +4,12 @@
 
 该项目旨在构建一个能够理解学术论文、支持复杂问题检索与回答的 Academic AI Assistant。
 
-目前已完成第一阶段（Advanced RAG），后续将逐步升级为基于 LangGraph 的 Multi-Agent Research Assistant。
 
 ---
 
 # 项目特色
 
-相比传统 RAG，本项目实现了完整的高级检索增强流程：
+本项目实现以下完整的高级检索增强流程：
 
 - Query Rewrite
 
@@ -235,56 +234,6 @@ LLM
 > Encoder 和 Decoder 分别由哪些组件组成？
 
 系统能够结合论文内容给出结构化回答。
-
----
-
-# Roadmap
-
-## Phase 1（已完成）
-
-- [x] Query Rewrite
-- [x] HyDE
-- [x] Hybrid Retrieval
-- [x] CrossEncoder Reranker
-- [x] Tool Routing
-- [x] Memory
-- [x] ChromaDB
-
----
-
-## Phase 2（开发中）
-
-- [ ] LangGraph Workflow
-- [ ] Planner Agent
-- [ ] Retriever Agent
-- [ ] Reader Agent
-- [ ] Critic Agent
-- [ ] Citation Grounding
-
----
-
-## Phase 3
-
-- [ ] Multi-Agent Research Assistant
-- [ ] Automatic Literature Review
-- [ ] RAG Evaluation Pipeline
-- [ ] Report Generation
-- [ ] Web Search Integration
-
----
-
-# 项目目标
-
-本项目将逐步演进为一个面向科研场景的 Agentic RAG 系统，重点探索：
-
-- Agent Workflow
-- Multi-Agent Collaboration
-- Advanced Retrieval
-- Citation Grounding
-- RAG Evaluation
-- Research Assistant
-
-最终目标是构建一个能够完成论文阅读、检索、总结、分析与综述生成的 Academic AI Agent。
 
 ---
 
